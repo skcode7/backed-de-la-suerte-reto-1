@@ -1,0 +1,379 @@
+$ph-animation-duration: 1.2s !default;
+$gx-xsmall-device-breakpoint: 768px;
+
+@import "../../node_modules/placeholder-loading/src/scss/placeholder-loading";
+
+:root {
+  --gx-table-row-autogrow-collapse: minmax(min-content, max-content);
+  --gx-table-row-autogrow: min-content;
+  --gx-table-row-collapse: minmax(min-content, min-content);
+  --gx-table-components-column: 1fr;
+  --gx-table-components-row: auto;
+  --gx-scrollbar-background-color: #f5f5f5;
+  --gx-scrollbar-thumb-color: #555;
+
+  /* - - - - gx-layout and gx-navbar config - - - - */
+  --gx-navbar-main-height: 60px;
+  --gx-navbar-sub-height: 48px;
+  --gx-navbar-base-z-index: 100;
+}
+
+@mixin gx-image-attribute(
+  $class,
+  $label: null,
+  $highlighted: null,
+  $accept-drag-class: null,
+  $no-accept-drag-class: null,
+  $start-dragging-class: null,
+  $drag-over-class: null
+) {
+  @include gx-image(
+    $class: $class,
+    $highlighted: $highlighted,
+    $accept-drag-class: $accept-drag-class,
+    $no-accept-drag-class: $no-accept-drag-class,
+    $start-dragging-class: $start-dragging-class,
+    $drag-over-class: $drag-over-class
+  );
+
+  @include gx-form-field(
+    $class: $class,
+    $label: $label,
+    $highlighted: $highlighted,
+    $accept-drag-class: $accept-drag-class,
+    $no-accept-drag-class: $no-accept-drag-class,
+    $start-dragging-class: $start-dragging-class,
+    $drag-over-class: $drag-over-class
+  );
+}
+
+@mixin gx-application-bar($class, $back-button: null, $default-button: null) {
+  @include gx-card($bars: $class);
+  @include gx-navbar(
+    $class: $class,
+    $back-button: $back-button,
+    $default-button: $default-button
+  );
+}
+
+@mixin gx-message-color( $message-type: null, $color: null, $background-color: null, $border-color: null ) {
+    & .alert-#{$message-type} {
+        color: $color;
+        background-color: $background-color;
+        border-color: $border-color;
+    }
+}
+@mixin gx-application($class) {
+  background-color: var(--gx-application-background-color);
+  @extend #{$class} !optional;
+
+  .main-layout {
+    & > .vertical {
+      background-color: var(--gx-application-background-color);
+    }
+  }
+
+  gx-action-sheet {
+    --gx-action-sheet-color: var(--action-tint-color);
+  }
+
+  gx-message {
+    --gx-message-color: var(--action-tint-color);
+    --gx-message-background-color: var(--primary-color-dark);
+
+    @include gx-message-color( "info", var(--gx-message-color), var(--gx-message-background-color), var(--gx-message-background-color));
+    @include gx-message-color( "warning", var(--gx-message-color), var(--gx-message-background-color), var(--gx-message-background-color));
+    @include gx-message-color( "error", var(--gx-message-color), var(--gx-message-background-color), var(--gx-message-background-color));
+  }
+
+  gx-modal {
+    --gx-modal-header-color: var(--action-tint-color);
+    --gx-modal-header-background-color: var(--primary-color);
+    --gx-modal-primary-action-color: var(--action-tint-color);
+    --gx-modal-secondary-action-color: var(--action-tint-color);
+
+    & .modal-header {
+      background-color: var(--gx-modal-header-background-color);
+      color: var(--gx-modal-header-color);
+
+      & .close {
+        color: var(--gx-modal-header-color);
+      }
+    }
+
+    & .modal-footer .btn-primary {
+      color: var(--gx-modal-primary-action-color);
+    }
+
+    & .modal-footer .btn-secondary {
+      color: var(--gx-modal-secondary-action-color);
+    }
+
+   & .modal-footer .btn {
+      color: var(--gx-modal-secondary-action-color);
+   }
+  }
+}
+
+@mixin gx-any( 
+    $class, 
+    $back-button: null, 
+    $default-button: null, 
+    $label: null, 
+    $highlighted: null, 
+    $accept-drag-class: null, 
+    $no-accept-drag-class: null, 
+    $start-dragging-class: null, 
+    $drag-over-class: null, 
+    $caption: null, 
+    $animation: null, 
+    $title: null, 
+    $description: null, 
+    $selected-tab-caption: null, 
+    $unselected-tab-caption: null, 
+    $horizontal-line: null, 
+    $odd-row: null, 
+    $even-row: null, 
+    $loading-animation: null, 
+    $group-separator: null, 
+    $cell-table: null, 
+    $selected-cell-table: null, 
+    $x-axis-table: null, 
+    $y-axis-table: null, 
+    $horizontal-line-separator: null, 
+    $vertical-line-separator: null 
+) {
+    @at-root gx-application#{&} {
+        @include gx-application($class);
+    }
+
+    @at-root gx-application-bar#{&} {
+        @include gx-application-bar($class, $back-button, $default-button);
+    }
+
+    @at-root gx-form-field#{&}, gx-edit#{&}, gx-checkbox#{&}, gx-radio-group#{&}, gx-select#{&}, gx-password-edit#{&} {
+        @include gx-form-field( $class, $label, $highlighted, $accept-drag-class, $no-accept-drag-class, $start-dragging-class, $drag-over-class );
+    }
+
+    @at-root gx-button#{&} {
+        @include gx-button($class, $highlighted);
+    }
+
+    @at-root gx-group#{&} {
+        @include gx-group($class, $highlighted, $caption);
+    }
+
+    @at-root gx-image-attribute#{&} {
+        @include gx-image-attribute( $class, $label, $highlighted, $accept-drag-class, $no-accept-drag-class, $start-dragging-class, $drag-over-class );
+    }
+
+    @at-root gx-image#{&} {
+      @include gx-image(
+        $class: $class,
+        $highlighted: $highlighted,
+        $accept-drag-class: $accept-drag-class,
+        $no-accept-drag-class: $no-accept-drag-class,
+        $start-dragging-class: $start-dragging-class,
+        $drag-over-class: $drag-over-class
+      );
+    }
+
+    @at-root gx-loading#{&} {
+        @include gx-loading($class, $animation, $title, $description);
+    }
+
+    @at-root gx-tab#{&} {
+        @include gx-tab( $class, $highlighted, $selected-tab-caption, $unselected-tab-caption );
+    }
+
+    @at-root gx-table#{&} {
+        @include gx-table($class, $highlighted, $horizontal-line);
+    }
+
+    @at-root gx-tab-caption#{&} {
+        @include gx-tab-caption($class, $highlighted);
+    }
+
+    @at-root gx-textblock#{&} {
+        @include gx-textblock( $class, $highlighted, $accept-drag-class, $no-accept-drag-class, $start-dragging-class, $drag-over-class );
+    }
+
+    @at-root gx-grid-base#{&} {
+        @include gx-grid-base( $class, $highlighted, $odd-row, $even-row, $loading-animation, $group-separator, $horizontal-line );
+    }
+
+    @at-root gx-grid-base-row#{&} {
+        @include gx-grid-base-row($class, $highlighted);
+    }
+
+    @at-root gx-grid-smart-css#{&} {
+        @include gx-grid-smart-css( $class, $highlighted, $odd-row, $even-row, $loading-animation, $group-separator, $horizontal-line );
+    }
+}
+
+// - - - - - - - - - - - - - - Layout customization - - - - - - - - - - - - - -
+.main-layout {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  --gx-layout-base-z-index: 1000;
+
+  & > .vertical {
+    min-width: 320px;
+  }
+}
+
+// Used to correctly place the gx-navbar and the gx-layout components.
+html > body > my-app {
+  display: flex !important;
+  flex-direction: column;
+
+  /*  This ensures that the application will have all the available height when
+      the address bar is visible and when it is not
+  */
+  min-height: var(--vh, 100vh);
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+
+  & > gx-card {
+    display: flex;
+    flex: 1;
+  }
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+// - - - - - - - - - - - - - Scrollbars customization - - - - - - - - - - - - -
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gx-scrollbar-thumb-color)
+    var(--gx-scrollbar-background-color);
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gx-scrollbar-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gx-scrollbar-thumb-color);
+  border-radius: 6px;
+  border: 3px solid var(--gx-scrollbar-background-color);
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+// - - - - - - - - - - - - - - - Virtual-scroller - - - - - - - - - - - - - - -
+virtual-scroller {
+  flex: 1;
+
+  .scrollable-content {
+    height: auto !important;
+  }
+}
+
+/* Temporal WA for Virtual Scroller Scroll Jumping when First Item has margin bottom*/
+virtual-scroller > .scrollable-content > .gx-grid-row {
+  margin-bottom: 0px;
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+// - - - - - - - - - - -  Style applied to canvas cells  - - - - - - - - - - -
+gx-canvas-cell {
+  pointer-events: none;
+}
+
+.flex-cell {
+  display: flex;
+  overflow: hidden;
+
+  & > gx-textblock {
+    width: 100%;
+    height: 100%;
+  }
+
+  & > gx-button {
+    flex: 1;
+  }
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+gx-table,
+gx-image,
+gx-form-field,
+gx-textblock,
+gx-grid-horizontal,
+gx-grid-smart-css,
+gx-grid-fs,
+gx-map,
+gx-tab,
+gx-button,
+gx-group {
+  pointer-events: auto;
+}
+
+gx-canvas, gx-table {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+// Style applied to the highlightable controls
+[data-has-action] {
+  cursor: pointer;
+}
+
+gx-textblock .content:empty {
+  min-height: 1em;
+}
+
+gx-card {
+  .card {
+    border: 0;
+  }
+}
+
+.gx-sections-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gx-loading-text {
+  text-align: center;
+}
+
+// Customization of the control's option
+gx-checkbox, 
+gx-radio-option {
+  --option-checked-color: var(--control-activated-color);
+
+  --option-border: 1px solid var(--control-normal-color);
+
+  --option-highlight-border-color: var(--control-highlight-color);
+}
+
+gx-map {
+  width: 100%;
+  height: 100%;
+}
+
+gx-map .popup-data-container > div {
+  position: static !important;
+}
+
+// WA for improve button transition
+gx-button button.gx-button {
+  transition: filter 0.25s;
+
+  &:focus:not(:active) {
+    filter: unset;
+  }
+}

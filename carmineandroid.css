@@ -1,0 +1,939 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/@angular-devkit/build-angular/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/@angular-devkit/build-angular/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/sass/CarmineAndroid.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.ph-item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding: 30px 15px 15px 15px;
+  overflow: hidden;
+  direction: ltr;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+}
+.ph-item,
+.ph-item *,
+.ph-item ::after,
+.ph-item ::before {
+  box-sizing: border-box;
+}
+.ph-item::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  width: 500%;
+  margin-left: -250%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 54%) 50% 50%;
+  animation: phAnimation 1.2s linear infinite;
+  content: " ";
+  pointer-events: none;
+}
+.ph-item > * {
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column;
+  margin-bottom: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.ph-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -7.5px;
+}
+.ph-row div {
+  height: 10px;
+  margin-top: 7.5px;
+  background-color: #ced4da;
+}
+.ph-row .big, .ph-row.big div {
+  height: 20px;
+}
+.ph-row .empty {
+  background-color: rgba(255, 255, 255, 0);
+}
+.ph-col-2 {
+  flex: 0 0 16.6666666667%;
+}
+.ph-col-4 {
+  flex: 0 0 33.3333333333%;
+}
+.ph-col-6 {
+  flex: 0 0 50%;
+}
+.ph-col-8 {
+  flex: 0 0 66.6666666667%;
+}
+.ph-col-10 {
+  flex: 0 0 83.3333333333%;
+}
+.ph-col-12 {
+  flex: 0 0 100%;
+}
+[class*=ph-col] {
+  direction: ltr;
+}
+[class*=ph-col] > * + .ph-row {
+  margin-top: 0;
+}
+[class*=ph-col] > * + * {
+  margin-top: 7.5px;
+}
+.ph-avatar {
+  position: relative;
+  width: 100%;
+  min-width: 60px;
+  overflow: hidden;
+  background-color: #ced4da;
+  border-radius: 50%;
+}
+.ph-avatar::before {
+  display: block;
+  padding-top: 100%;
+  content: " ";
+}
+.ph-picture {
+  width: 100%;
+  height: 120px;
+  background-color: #ced4da;
+}
+@keyframes phAnimation {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+  100% {
+    transform: translate3d(30%, 0, 0);
+  }
+}
+:root {
+  --gx-table-row-autogrow-collapse: minmax(min-content, max-content);
+  --gx-table-row-autogrow: min-content;
+  --gx-table-row-collapse: minmax(min-content, min-content);
+  --gx-table-components-column: 1fr;
+  --gx-table-components-row: auto;
+  --gx-scrollbar-background-color: #f5f5f5;
+  --gx-scrollbar-thumb-color: #555;
+  /* - - - - gx-layout and gx-navbar config - - - - */
+  --gx-navbar-main-height: 60px;
+  --gx-navbar-sub-height: 48px;
+  --gx-navbar-base-z-index: 100;
+}
+.main-layout {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  --gx-layout-base-z-index: 1000;
+}
+.main-layout > .vertical {
+  min-width: 320px;
+}
+html > body > my-app {
+  display: flex !important;
+  flex-direction: column;
+  /*  This ensures that the application will have all the available height when
+      the address bar is visible and when it is not
+  */
+  min-height: var(--vh, 100vh);
+}
+.main-content {
+  display: flex;
+  flex: 1;
+}
+.main-content > gx-card {
+  display: flex;
+  flex: 1;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gx-scrollbar-thumb-color) var(--gx-scrollbar-background-color);
+}
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--gx-scrollbar-background-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--gx-scrollbar-thumb-color);
+  border-radius: 6px;
+  border: 3px solid var(--gx-scrollbar-background-color);
+}
+virtual-scroller {
+  flex: 1;
+}
+virtual-scroller .scrollable-content {
+  height: auto !important;
+}
+/* Temporal WA for Virtual Scroller Scroll Jumping when First Item has margin bottom*/
+virtual-scroller > .scrollable-content > .gx-grid-row {
+  margin-bottom: 0px;
+}
+gx-canvas-cell {
+  pointer-events: none;
+}
+.flex-cell {
+  display: flex;
+  overflow: hidden;
+}
+.flex-cell > gx-textblock {
+  width: 100%;
+  height: 100%;
+}
+.flex-cell > gx-button {
+  flex: 1;
+}
+gx-table,
+gx-image,
+gx-form-field,
+gx-textblock,
+gx-grid-horizontal,
+gx-grid-smart-css,
+gx-grid-fs,
+gx-map,
+gx-tab,
+gx-button,
+gx-group {
+  pointer-events: auto;
+}
+gx-canvas, gx-table {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+[data-has-action] {
+  cursor: pointer;
+}
+gx-textblock .content:empty {
+  min-height: 1em;
+}
+gx-card .card {
+  border: 0;
+}
+.gx-sections-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.gx-loading-text {
+  text-align: center;
+}
+gx-checkbox,
+gx-radio-option {
+  --option-checked-color: var(--control-activated-color);
+  --option-border: 1px solid var(--control-normal-color);
+  --option-highlight-border-color: var(--control-highlight-color);
+}
+gx-map {
+  width: 100%;
+  height: 100%;
+}
+gx-map .popup-data-container > div {
+  position: static !important;
+}
+gx-button button.gx-button {
+  transition: filter 0.25s;
+}
+gx-button button.gx-button:focus:not(:active) {
+  filter: unset;
+}
+:root {
+  --gx-image_Group: url(/assets/resources/CarmineAndroid/Group.png);
+}
+.Form {
+  enter-effect: gx_default;
+  close-effect: gx_default;
+  call-type: gx_default;
+  target-size: gx_default;
+  target-width: 100%;
+  target-height: 100%;
+  content-size-change: gx_default;
+  input-view-appearance: gx_default;
+}
+.ConfirmButton button:hover, .ConfirmButton button:focus, .ConfirmButton button:not(:disabled):not(.disabled):active, .ConfirmButton button, .ButtonActionBar button:hover, .ButtonActionBar button:focus, .ButtonActionBar button:not(:disabled):not(.disabled):active, .ButtonActionBar button, .ButtonDelete button:hover, .ButtonDelete button:focus, .ButtonDelete button:not(:disabled):not(.disabled):active, .ButtonDelete button, .Button button:hover, .Button button:focus, .Button button:not(:disabled):not(.disabled):active, .Button button {
+  border-style: none;
+  text-transform: uppercase;
+}
+.Button button:hover, .Button button:focus, .Button button:not(:disabled):not(.disabled):active {
+  filter: brightness(85%);
+}
+.ButtonDelete button:hover, .ButtonDelete button:focus, .ButtonDelete button:not(:disabled):not(.disabled):active, .ButtonDelete button {
+  border-style: none;
+  background-color: #0000FF;
+  text-transform: uppercase;
+}
+.ButtonDelete button:hover, .ButtonDelete button:focus, .ButtonDelete button:not(:disabled):not(.disabled):active {
+  filter: brightness(85%);
+}
+.ButtonActionBar button:hover, .ButtonActionBar button:focus, .ButtonActionBar button:not(:disabled):not(.disabled):active, .ButtonActionBar button {
+  border-style: none;
+  text-transform: uppercase;
+}
+.ButtonActionBar button:hover, .ButtonActionBar button:focus, .ButtonActionBar button:not(:disabled):not(.disabled):active {
+  filter: brightness(85%);
+}
+.ConfirmButton button:hover, .ConfirmButton button:focus, .ConfirmButton button:not(:disabled):not(.disabled):active, .ConfirmButton button {
+  border-style: none;
+  background-color: #B80545;
+  font-family: Arial, Roboto;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.ConfirmButton {
+  --margin-top: 0px;
+  --margin-right: 16px;
+  --margin-left: 16px;
+}
+.ConfirmButton button:hover, .ConfirmButton button:focus, .ConfirmButton button:not(:disabled):not(.disabled):active {
+  filter: brightness(85%);
+}
+.Grid {
+  padding-left: 0px;
+  background-size: 100% 100%;
+}
+.Grid {
+  --grid--horizontal-line-separator: var(--grid--horizontal-line-separator-default);
+}
+.Grid > *[slot=grid-content]:not(virtual-scroller) > gx-grid-smart-cell > *::after, .Grid > * > .scrollable-content > gx-grid-smart-cell > *::after {
+  --grid--horizontal-line-separator-default: block;
+  content: "";
+  height: var(--grid--horizontal-line-size, 1px);
+  display: var(--grid--horizontal-line-separator, --grid--horizontal-line-separator-default);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.Group > fieldset {
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.WWLineSeparator, .Grid > *[slot=grid-content]:not(virtual-scroller) > gx-grid-smart-cell > *::after, .Grid > * > .scrollable-content > gx-grid-smart-cell > *::after, .MatrixLineSeparator, .HorizontalLine {
+  background-color: #cfcfcf;
+}
+.MatrixLineSeparator {
+  background-color: #cfcfcf;
+}
+.WWLineSeparator, .Grid > *[slot=grid-content]:not(virtual-scroller) > gx-grid-smart-cell > *::after, .Grid > * > .scrollable-content > gx-grid-smart-cell > *::after {
+  background-color: #EAEAEA;
+  margin-bottom: 1px;
+}
+.WWImage [data-part=field],
+.WWImage [data-part=container],
+.WWImage [data-readonly], .WWImage img, .ViewImage [data-part=field],
+.ViewImage [data-part=container],
+.ViewImage [data-readonly], .ViewImage img, .Image [data-part=field],
+.Image [data-part=container],
+.Image [data-readonly], .Image img {
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.WWImage, .ViewImage, .Image {
+  --image-loading-indicator: none;
+}
+.ViewImage [data-part=field],
+.ViewImage [data-part=container],
+.ViewImage [data-readonly], .ViewImage img {
+  padding-bottom: 0px;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.ViewImage {
+  --image-scale-type: cover;
+  --image-loading-indicator: none;
+  --margin-top: 10px;
+  --margin-bottom: 20px;
+  --margin-left: 16px;
+  --height: 100px;
+  --width: 100px;
+}
+.WWImage [data-part=field],
+.WWImage [data-part=container],
+.WWImage [data-readonly], .WWImage img {
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.WWImage {
+  --image-scale-type: cover;
+  --image-loading-indicator: none;
+  --margin-left: 0px;
+}
+.TableSectioninsert, .TableSection, .GridContainer, .MainTable, .TableDetail, .MatrixSelectedRowTable, .MatrixOddRowTable, .MatrixEvenRowTable, .MatrixAxisTable, .MatrixSelectedCell, .MatrixCell, .Table {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.TableSection, .GridContainer, .MainTable, .TableDetail, .MatrixSelectedRowTable, .MatrixOddRowTable, .MatrixEvenRowTable, .MatrixAxisTable, .MatrixSelectedCell, .MatrixCell, .Table {
+  --table--horizontal-line-separator: none;
+}
+.MatrixCell {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.MatrixCell {
+  --table--horizontal-line-separator: none;
+}
+.MatrixSelectedCell {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.MatrixSelectedCell {
+  --table--horizontal-line-separator: none;
+}
+.MatrixAxisTable {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.MatrixAxisTable {
+  --table--horizontal-line-separator: none;
+}
+.MatrixEvenRowTable {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.MatrixEvenRowTable {
+  --table--horizontal-line-separator: none;
+}
+.MatrixOddRowTable {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.MatrixOddRowTable {
+  --table--horizontal-line-separator: none;
+}
+.MatrixSelectedRowTable {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.MatrixSelectedRowTable {
+  --table--horizontal-line-separator: none;
+}
+.TableDetail {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.TableDetail {
+  --table--horizontal-line-separator: none;
+}
+.MainTable {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.MainTable {
+  --table--horizontal-line-separator: none;
+}
+.GridContainer {
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.GridContainer {
+  --table--horizontal-line-separator: none;
+}
+.TableSectioninsert, .TableSection {
+  padding-left: 0px;
+  padding-top: 15px;
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.TableSectioninsert, .TableSection {
+  --table--horizontal-line-separator: var(--grid--horizontal-line-separator-default);
+}
+.TableSectioninsert {
+  padding-top: 15px;
+  background-color: #FFFFFF;
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.TableSectioninsert {
+  --table--horizontal-line-separator: none;
+}
+.CalendarLabel [data-part=field],
+.CalendarLabel [data-part=container],
+.CalendarLabel [data-readonly], .CalendarLabel .content,
+.CalendarLabel .label-content, .AttributeTitleLabelPositioning [data-part=field], .AttributeTitle [data-part=label] [data-part=field],
+.AttributeTitleLabelPositioning [data-part=container],
+.AttributeTitle [data-part=label] [data-part=container],
+.AttributeTitleLabelPositioning [data-readonly],
+.AttributeTitle [data-part=label] [data-readonly], .AttributeTitleLabelPositioning .content, .AttributeTitle [data-part=label] .content,
+.AttributeTitleLabelPositioning .label-content,
+.AttributeTitle [data-part=label] .label-content, .LinkAttributeLabelPositioning [data-part=field], .LinkAttribute [data-part=label] [data-part=field],
+.LinkAttributeLabelPositioning [data-part=container],
+.LinkAttribute [data-part=label] [data-part=container],
+.LinkAttributeLabelPositioning [data-readonly],
+.LinkAttribute [data-part=label] [data-readonly], .LinkAttributeLabelPositioning .content, .LinkAttribute [data-part=label] .content,
+.LinkAttributeLabelPositioning .label-content,
+.LinkAttribute [data-part=label] .label-content, .AttributeReadOnlyLabelPositioning [data-part=field], .AttributeReadOnly [data-part=label] [data-part=field],
+.AttributeReadOnlyLabelPositioning [data-part=container],
+.AttributeReadOnly [data-part=label] [data-part=container],
+.AttributeReadOnlyLabelPositioning [data-readonly],
+.AttributeReadOnly [data-part=label] [data-readonly], .AttributeReadOnlyLabelPositioning .content, .AttributeReadOnly [data-part=label] .content,
+.AttributeReadOnlyLabelPositioning .label-content,
+.AttributeReadOnly [data-part=label] .label-content, .AttributeLabelPositioning [data-part=field], .Attribute [data-part=label] [data-part=field],
+.AttributeLabelPositioning [data-part=container],
+.Attribute [data-part=label] [data-part=container],
+.AttributeLabelPositioning [data-readonly],
+.Attribute [data-part=label] [data-readonly], .AttributeLabelPositioning .content, .Attribute [data-part=label] .content,
+.AttributeLabelPositioning .label-content,
+.Attribute [data-part=label] .label-content, .TextBlockTitle [data-part=field],
+.TextBlockTitle [data-part=container],
+.TextBlockTitle [data-readonly], .TextBlockTitle .content,
+.TextBlockTitle .label-content, .AttributeLabel [data-part=field],
+.AttributeLabel [data-part=container],
+.AttributeLabel [data-readonly], .AttributeLabel .content,
+.AttributeLabel .label-content, .TextBlockSlider [data-part=field],
+.TextBlockSlider [data-part=container],
+.TextBlockSlider [data-readonly], .TextBlockSlider .content,
+.TextBlockSlider .label-content, .ViewImageLabelClass [data-part=field], .ViewImage [data-part=label] [data-part=field],
+.ViewImageLabelClass [data-part=container],
+.ViewImage [data-part=label] [data-part=container],
+.ViewImageLabelClass [data-readonly],
+.ViewImage [data-part=label] [data-readonly], .ViewImageLabelClass .content, .ViewImage [data-part=label] .content,
+.ViewImageLabelClass .label-content,
+.ViewImage [data-part=label] .label-content, .ImageLabelClass [data-part=field],
+.ImageLabelClass [data-part=container],
+.ImageLabelClass [data-readonly], .ImageLabelClass .content,
+.ImageLabelClass .label-content, .AttributeSubtitleLabelPositioning [data-part=field], .AttributeSubtitle [data-part=label] [data-part=field],
+.AttributeSubtitleLabelPositioning [data-part=container],
+.AttributeSubtitle [data-part=label] [data-part=container],
+.AttributeSubtitleLabelPositioning [data-readonly],
+.AttributeSubtitle [data-part=label] [data-readonly], .AttributeSubtitleLabelPositioning .content, .AttributeSubtitle [data-part=label] .content,
+.AttributeSubtitleLabelPositioning .label-content,
+.AttributeSubtitle [data-part=label] .label-content, .TextBlockSubtitle [data-part=field],
+.TextBlockSubtitle [data-part=container],
+.TextBlockSubtitle [data-readonly], .TextBlockSubtitle .content,
+.TextBlockSubtitle .label-content, .TextBlock [data-part=field],
+.TextBlock [data-part=container],
+.TextBlock [data-readonly], .TextBlock .content,
+.TextBlock .label-content {
+  margin-left: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.AttributeSubtitleLabelPositioning [data-part=field], .AttributeSubtitle [data-part=label] [data-part=field],
+.AttributeSubtitleLabelPositioning [data-part=container],
+.AttributeSubtitle [data-part=label] [data-part=container],
+.AttributeSubtitleLabelPositioning [data-readonly],
+.AttributeSubtitle [data-part=label] [data-readonly], .AttributeSubtitleLabelPositioning .content, .AttributeSubtitle [data-part=label] .content,
+.AttributeSubtitleLabelPositioning .label-content,
+.AttributeSubtitle [data-part=label] .label-content, .TextBlockSubtitle [data-part=field],
+.TextBlockSubtitle [data-part=container],
+.TextBlockSubtitle [data-readonly], .TextBlockSubtitle .content,
+.TextBlockSubtitle .label-content {
+  margin-left: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.AttributeSubtitleLabelPositioning [data-part=field], .AttributeSubtitle [data-part=label] [data-part=field],
+.AttributeSubtitleLabelPositioning [data-part=container],
+.AttributeSubtitle [data-part=label] [data-part=container],
+.AttributeSubtitleLabelPositioning [data-readonly],
+.AttributeSubtitle [data-part=label] [data-readonly], .AttributeSubtitleLabelPositioning .content, .AttributeSubtitle [data-part=label] .content,
+.AttributeSubtitleLabelPositioning .label-content,
+.AttributeSubtitle [data-part=label] .label-content {
+  align: left;
+}
+.ViewImageLabelClass [data-part=field], .ViewImage [data-part=label] [data-part=field],
+.ViewImageLabelClass [data-part=container],
+.ViewImage [data-part=label] [data-part=container],
+.ViewImageLabelClass [data-readonly],
+.ViewImage [data-part=label] [data-readonly], .ViewImageLabelClass .content, .ViewImage [data-part=label] .content,
+.ViewImageLabelClass .label-content,
+.ViewImage [data-part=label] .label-content, .ImageLabelClass [data-part=field],
+.ImageLabelClass [data-part=container],
+.ImageLabelClass [data-readonly], .ImageLabelClass .content,
+.ImageLabelClass .label-content {
+  margin-left: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.ViewImageLabelClass [data-part=field], .ViewImage [data-part=label] [data-part=field],
+.ViewImageLabelClass [data-part=container],
+.ViewImage [data-part=label] [data-part=container],
+.ViewImageLabelClass [data-readonly],
+.ViewImage [data-part=label] [data-readonly], .ViewImageLabelClass .content, .ViewImage [data-part=label] .content,
+.ViewImageLabelClass .label-content,
+.ViewImage [data-part=label] .label-content {
+  margin-left: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.TextBlockSlider [data-part=field],
+.TextBlockSlider [data-part=container],
+.TextBlockSlider [data-readonly], .TextBlockSlider .content,
+.TextBlockSlider .label-content {
+  margin-left: 2px;
+  background-color: #B80545;
+  font-size: 24px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.AttributeLabel [data-part=field],
+.AttributeLabel [data-part=container],
+.AttributeLabel [data-readonly], .AttributeLabel .content,
+.AttributeLabel .label-content {
+  margin-left: 0px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.AttributeTitleLabelPositioning [data-part=field], .AttributeTitle [data-part=label] [data-part=field],
+.AttributeTitleLabelPositioning [data-part=container],
+.AttributeTitle [data-part=label] [data-part=container],
+.AttributeTitleLabelPositioning [data-readonly],
+.AttributeTitle [data-part=label] [data-readonly], .AttributeTitleLabelPositioning .content, .AttributeTitle [data-part=label] .content,
+.AttributeTitleLabelPositioning .label-content,
+.AttributeTitle [data-part=label] .label-content, .LinkAttributeLabelPositioning [data-part=field], .LinkAttribute [data-part=label] [data-part=field],
+.LinkAttributeLabelPositioning [data-part=container],
+.LinkAttribute [data-part=label] [data-part=container],
+.LinkAttributeLabelPositioning [data-readonly],
+.LinkAttribute [data-part=label] [data-readonly], .LinkAttributeLabelPositioning .content, .LinkAttribute [data-part=label] .content,
+.LinkAttributeLabelPositioning .label-content,
+.LinkAttribute [data-part=label] .label-content, .AttributeReadOnlyLabelPositioning [data-part=field], .AttributeReadOnly [data-part=label] [data-part=field],
+.AttributeReadOnlyLabelPositioning [data-part=container],
+.AttributeReadOnly [data-part=label] [data-part=container],
+.AttributeReadOnlyLabelPositioning [data-readonly],
+.AttributeReadOnly [data-part=label] [data-readonly], .AttributeReadOnlyLabelPositioning .content, .AttributeReadOnly [data-part=label] .content,
+.AttributeReadOnlyLabelPositioning .label-content,
+.AttributeReadOnly [data-part=label] .label-content, .AttributeLabelPositioning [data-part=field], .Attribute [data-part=label] [data-part=field],
+.AttributeLabelPositioning [data-part=container],
+.Attribute [data-part=label] [data-part=container],
+.AttributeLabelPositioning [data-readonly],
+.Attribute [data-part=label] [data-readonly], .AttributeLabelPositioning .content, .Attribute [data-part=label] .content,
+.AttributeLabelPositioning .label-content,
+.Attribute [data-part=label] .label-content, .TextBlockTitle [data-part=field],
+.TextBlockTitle [data-part=container],
+.TextBlockTitle [data-readonly], .TextBlockTitle .content,
+.TextBlockTitle .label-content {
+  margin-left: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.AttributeLabelPositioning [data-part=field], .Attribute [data-part=label] [data-part=field],
+.AttributeLabelPositioning [data-part=container],
+.Attribute [data-part=label] [data-part=container],
+.AttributeLabelPositioning [data-readonly],
+.Attribute [data-part=label] [data-readonly], .AttributeLabelPositioning .content, .Attribute [data-part=label] .content,
+.AttributeLabelPositioning .label-content,
+.Attribute [data-part=label] .label-content {
+  align: left;
+}
+.AttributeReadOnlyLabelPositioning [data-part=field], .AttributeReadOnly [data-part=label] [data-part=field],
+.AttributeReadOnlyLabelPositioning [data-part=container],
+.AttributeReadOnly [data-part=label] [data-part=container],
+.AttributeReadOnlyLabelPositioning [data-readonly],
+.AttributeReadOnly [data-part=label] [data-readonly], .AttributeReadOnlyLabelPositioning .content, .AttributeReadOnly [data-part=label] .content,
+.AttributeReadOnlyLabelPositioning .label-content,
+.AttributeReadOnly [data-part=label] .label-content {
+  align: left;
+}
+.LinkAttributeLabelPositioning [data-part=field], .LinkAttribute [data-part=label] [data-part=field],
+.LinkAttributeLabelPositioning [data-part=container],
+.LinkAttribute [data-part=label] [data-part=container],
+.LinkAttributeLabelPositioning [data-readonly],
+.LinkAttribute [data-part=label] [data-readonly], .LinkAttributeLabelPositioning .content, .LinkAttribute [data-part=label] .content,
+.LinkAttributeLabelPositioning .label-content,
+.LinkAttribute [data-part=label] .label-content {
+  align: left;
+}
+.AttributeTitleLabelPositioning [data-part=field], .AttributeTitle [data-part=label] [data-part=field],
+.AttributeTitleLabelPositioning [data-part=container],
+.AttributeTitle [data-part=label] [data-part=container],
+.AttributeTitleLabelPositioning [data-readonly],
+.AttributeTitle [data-part=label] [data-readonly], .AttributeTitleLabelPositioning .content, .AttributeTitle [data-part=label] .content,
+.AttributeTitleLabelPositioning .label-content,
+.AttributeTitle [data-part=label] .label-content {
+  align: left;
+}
+.CalendarLabel [data-part=field],
+.CalendarLabel [data-part=container],
+.CalendarLabel [data-readonly], .CalendarLabel .content,
+.CalendarLabel .label-content {
+  margin-left: 2px;
+  font-size: 34px;
+  font-weight: bold;
+  color: #A1A1A1;
+}
+.Matrix {
+  show-horizontal-rules: True;
+  show-vertical-rules: True;
+  background-size: 100% 100%;
+}
+.Calendar {
+  background-size: 100% 100%;
+  sdmotion-max-horizontal: 0;
+  sdmotion-max-vertical: 0;
+}
+.AttributeTitle [data-part=field],
+.AttributeTitle [data-part=container],
+.AttributeTitle [data-readonly], .LinkAttribute [data-part=field],
+.LinkAttribute [data-part=container],
+.LinkAttribute [data-readonly], .AttributeReadOnly [data-part=field],
+.AttributeReadOnly [data-part=container],
+.AttributeReadOnly [data-readonly], .AttributeSubtitle [data-part=field],
+.AttributeSubtitle [data-part=container],
+.AttributeSubtitle [data-readonly], .Attribute [data-part=field],
+.Attribute [data-part=container],
+.Attribute [data-readonly] {
+  padding-left: 14px;
+  padding-right: 16px;
+  padding-top: 0px;
+  font-size: 18px;
+  color: #2A3143;
+}
+.AttributeTitle, .LinkAttribute, .AttributeReadOnly, .AttributeSubtitle, .Attribute {
+  --placeholder-text-color: #A1A1A1;
+  --margin-bottom: 0px;
+}
+.AttributeSubtitle [data-part=field],
+.AttributeSubtitle [data-part=container],
+.AttributeSubtitle [data-readonly] {
+  font-size: 18px;
+}
+.AttributeSubtitle [data-part=field]:focus,
+.AttributeSubtitle [data-part=option-control]:active,
+.AttributeSubtitle [data-part=container]:focus-within, .AttributeSubtitle .gx-highlighted:not([disabled]):not(.disabled)[type=text][readonly=true] [data-readonly], .AttributeSubtitle .gx-highlighted:not([disabled]):not(.disabled)[format=HTML] [data-part=container], .AttributeSubtitle .gx-highlighted[disabled=false][type=text][readonly=true] [data-readonly], .AttributeSubtitle .gx-highlighted[disabled=false][format=HTML] [data-part=container] {
+  color: #2A3143;
+}
+.AttributeReadOnly [data-part=field],
+.AttributeReadOnly [data-part=container],
+.AttributeReadOnly [data-readonly] {
+  font-size: 18px;
+}
+.AttributeReadOnly [data-part=field]:focus,
+.AttributeReadOnly [data-part=option-control]:active,
+.AttributeReadOnly [data-part=container]:focus-within, .AttributeReadOnly .gx-highlighted:not([disabled]):not(.disabled)[type=text][readonly=true] [data-readonly], .AttributeReadOnly .gx-highlighted:not([disabled]):not(.disabled)[format=HTML] [data-part=container], .AttributeReadOnly .gx-highlighted[disabled=false][type=text][readonly=true] [data-readonly], .AttributeReadOnly .gx-highlighted[disabled=false][format=HTML] [data-part=container] {
+  color: #2A3143;
+}
+.LinkAttribute [data-part=field],
+.LinkAttribute [data-part=container],
+.LinkAttribute [data-readonly] {
+  font-size: 18px;
+}
+.LinkAttribute [data-part=field]:focus,
+.LinkAttribute [data-part=option-control]:active,
+.LinkAttribute [data-part=container]:focus-within, .LinkAttribute .gx-highlighted:not([disabled]):not(.disabled)[type=text][readonly=true] [data-readonly], .LinkAttribute .gx-highlighted:not([disabled]):not(.disabled)[format=HTML] [data-part=container], .LinkAttribute .gx-highlighted[disabled=false][type=text][readonly=true] [data-readonly], .LinkAttribute .gx-highlighted[disabled=false][format=HTML] [data-part=container] {
+  color: #2A3143;
+}
+.AttributeTitle [data-part=field],
+.AttributeTitle [data-part=container],
+.AttributeTitle [data-readonly] {
+  font-size: 18px;
+}
+.AttributeTitle {
+  --margin-top: 0px;
+  --margin-right: 0px;
+  --margin-left: 0px;
+}
+.AttributeTitle [data-part=field]:focus,
+.AttributeTitle [data-part=option-control]:active,
+.AttributeTitle [data-part=container]:focus-within, .AttributeTitle .gx-highlighted:not([disabled]):not(.disabled)[type=text][readonly=true] [data-readonly], .AttributeTitle .gx-highlighted:not([disabled]):not(.disabled)[format=HTML] [data-part=container], .AttributeTitle .gx-highlighted[disabled=false][type=text][readonly=true] [data-readonly], .AttributeTitle .gx-highlighted[disabled=false][format=HTML] [data-part=container] {
+  color: #2A3143;
+}
+.Attribute [data-part=field]:focus,
+.Attribute [data-part=option-control]:active,
+.Attribute [data-part=container]:focus-within, .Attribute .gx-highlighted:not([disabled]):not(.disabled)[type=text][readonly=true] [data-readonly], .Attribute .gx-highlighted:not([disabled]):not(.disabled)[format=HTML] [data-part=container], .Attribute .gx-highlighted[disabled=false][type=text][readonly=true] [data-readonly], .Attribute .gx-highlighted[disabled=false][format=HTML] [data-part=container] {
+  color: #2A3143;
+}
+.GridRowEven, .Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row:not(gx-grid-smart-cell):nth-child(even),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row:nth-child(even),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row[is-row-even],
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row[is-row-even], .Grid > * > .scrollable-content > .gx-grid-row:not(gx-grid-smart-cell):nth-child(even),
+.Grid > * > .scrollable-content > * > .gx-grid-row:nth-child(even),
+.Grid > * > .scrollable-content > .gx-grid-row[is-row-even],
+.Grid > * > .scrollable-content > * > .gx-grid-row[is-row-even], .GridRowOdd, .Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row:not(gx-grid-smart-cell):nth-child(odd),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row:nth-child(odd),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row:not([is-row-even]),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row:not([is-row-even]), .Grid > * > .scrollable-content > .gx-grid-row:not(gx-grid-smart-cell):nth-child(odd),
+.Grid > * > .scrollable-content > * > .gx-grid-row:nth-child(odd),
+.Grid > * > .scrollable-content > .gx-grid-row:not([is-row-even]),
+.Grid > * > .scrollable-content > * > .gx-grid-row:not([is-row-even]), .GridRow {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background-size: 100% 100%;
+}
+.GridRowOdd, .Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row:not(gx-grid-smart-cell):nth-child(odd),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row:nth-child(odd),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row:not([is-row-even]),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row:not([is-row-even]), .Grid > * > .scrollable-content > .gx-grid-row:not(gx-grid-smart-cell):nth-child(odd),
+.Grid > * > .scrollable-content > * > .gx-grid-row:nth-child(odd),
+.Grid > * > .scrollable-content > .gx-grid-row:not([is-row-even]),
+.Grid > * > .scrollable-content > * > .gx-grid-row:not([is-row-even]) {
+  background-size: 100% 100%;
+}
+.GridRowEven, .Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row:not(gx-grid-smart-cell):nth-child(even),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row:nth-child(even),
+.Grid > *[slot=grid-content]:not(virtual-scroller) > .gx-grid-row[is-row-even],
+.Grid > *[slot=grid-content]:not(virtual-scroller) > * > .gx-grid-row[is-row-even], .Grid > * > .scrollable-content > .gx-grid-row:not(gx-grid-smart-cell):nth-child(even),
+.Grid > * > .scrollable-content > * > .gx-grid-row:nth-child(even),
+.Grid > * > .scrollable-content > .gx-grid-row[is-row-even],
+.Grid > * > .scrollable-content > * > .gx-grid-row[is-row-even] {
+  background-size: 100% 100%;
+}
+.Tab {
+  --tab-strip-background-color: #B80545;
+  --tab-strip-indicator-color: #FF3F79;
+}
+.TabPageUnselected a.gx-nav-link, .Tab gx-tab-caption[aria-selected=false] a.gx-nav-link, .TabPageSelected a.gx-nav-link, .Tab gx-tab-caption[aria-selected=true] a.gx-nav-link, .TabPage a.gx-nav-link {
+  font-family: Arial, Roboto;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.TabPageSelected a.gx-nav-link, .Tab gx-tab-caption[aria-selected=true] a.gx-nav-link {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.TabPageUnselected a.gx-nav-link, .Tab gx-tab-caption[aria-selected=false] a.gx-nav-link {
+  font-weight: normal;
+  color: #FFFFFF8C;
+  text-transform: uppercase;
+}
+.Application {
+  background-size: 100% 100%;
+}
+.Application {
+  --image-loading-indicator: none;
+  --primary-color: #B80545;
+  --primary-color-dark: #9F0039;
+  --accent-color: #FFA7C0;
+  --control-normal-color: #A1A1A1;
+  --control-activated-color: #FFA7C0;
+  --control-highlight-color: #FFA7C0;
+  --action-tint-color: #FFFFFF;
+  --gx-application-background-color: #FFFFFF;
+}
+.Application {
+  background-color: var(--gx-application-background-color);
+}
+.Application .main-layout > .vertical {
+  background-color: var(--gx-application-background-color);
+}
+.Application gx-action-sheet {
+  --gx-action-sheet-color: var(--action-tint-color);
+}
+.Application gx-message {
+  --gx-message-color: var(--action-tint-color);
+  --gx-message-background-color: var(--primary-color-dark);
+}
+.Application gx-message .alert-info {
+  color: var(--gx-message-color);
+  background-color: var(--gx-message-background-color);
+  border-color: var(--gx-message-background-color);
+}
+.Application gx-message .alert-warning {
+  color: var(--gx-message-color);
+  background-color: var(--gx-message-background-color);
+  border-color: var(--gx-message-background-color);
+}
+.Application gx-message .alert-error {
+  color: var(--gx-message-color);
+  background-color: var(--gx-message-background-color);
+  border-color: var(--gx-message-background-color);
+}
+.Application gx-modal {
+  --gx-modal-header-color: var(--action-tint-color);
+  --gx-modal-header-background-color: var(--primary-color);
+  --gx-modal-primary-action-color: var(--action-tint-color);
+  --gx-modal-secondary-action-color: var(--action-tint-color);
+}
+.Application gx-modal .modal-header {
+  background-color: var(--gx-modal-header-background-color);
+  color: var(--gx-modal-header-color);
+}
+.Application gx-modal .modal-header .close {
+  color: var(--gx-modal-header-color);
+}
+.Application gx-modal .modal-footer .btn-primary {
+  color: var(--gx-modal-primary-action-color);
+}
+.Application gx-modal .modal-footer .btn-secondary {
+  color: var(--gx-modal-secondary-action-color);
+}
+.Application gx-modal .modal-footer .btn {
+  color: var(--gx-modal-secondary-action-color);
+}
+.ApplicationBarsHeaderRow, .ApplicationBars {
+  --gx-navbar-main-background-color: #B80545;
+  --gx-navbar-main-color: #FFFFFF;
+  --gx-navbar-icon-color: var(--action-tint-color);
+}
+.ApplicationBars {
+  /*  We assume that the mixin defined inside the  class will
+      style the "default-button" ::part, so we don't have to specify the ::part
+      in this file.
+      Same goes for the  class.
+  */
+}
+.ApplicationBarsHeaderRow {
+  --gx-navbar-main-background-color: #B80545;
+  --gx-navbar-icon-color: var(--action-tint-color);
+}
+.ApplicationBarsHeaderRow {
+  /*  We assume that the mixin defined inside the  class will
+      style the "default-button" ::part, so we don't have to specify the ::part
+      in this file.
+      Same goes for the  class.
+  */
+}
+.section > main > gx-card > div > div > gx-table {
+  height: auto;
+}
+.section > main > gx-card > div > .card-header {
+  border-spacing: 10px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.section {
+  margin-bottom: 30px;
+}
+/* Horizontal grid items must fill its given area */
+.gx-horizontal-grid-item {
+  width: 100%;
+  height: 100%;
+}
+.gx-horizontal-grid-item > div {
+  width: 100%;
+  height: 100%;
+}
+/* Fix horizontal grid elements sizing (AGS version) 
+If this rule is not specified, grid elements in horizontal 
+grids won't grow, and would depend on container size. This 
+won't work if container size depends on contained items size*/
+.gx-horizontal-grid-item .image-viewer {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*# sourceMappingURL=carmineandroid.css.map*/

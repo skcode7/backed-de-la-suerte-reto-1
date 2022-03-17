@@ -1,0 +1,1121 @@
+@import  "../../node_modules/@genexus/web-controls-library/dist/theming/theming-mixins";
+@import  "./common";
+
+:root {
+	--gx-image_Group: url(/assets/resources/CarmineSD/Group.png);
+}
+%BaseAnimation {
+}
+
+%CustomVars_Animation {
+}
+
+.Animation {
+	// No mixin available for this class at the moment
+	@extend %BaseAnimation !optional;
+
+	@extend %CustomVars_Animation !optional;
+}
+
+%BaseForm {
+	enter-effect: gx_default;
+	close-effect: gx_default;
+	call-type: gx_default;
+	target-size: gx_default;
+	target-width: 100%;
+	target-height: 100%;
+	content-size-change: gx_default;
+	input-view-appearance: gx_default;
+
+}
+
+%CustomVars_Form {
+}
+
+.Form {
+	// No mixin available for this class at the moment
+	@extend %BaseForm !optional;
+
+	@extend %CustomVars_Form !optional;
+}
+
+%BaseButton {
+	border-style: none;
+	text-transform: uppercase;
+}
+
+%CustomVars_Button {
+}
+
+.Button {
+	@include gx-button( 
+		$class: "%BaseButton"
+	);
+	@extend %CustomVars_Button !optional;
+}
+%BaseButtonActionBar {
+	@extend %BaseButton !optional;
+	border-style: none;
+
+}
+
+%CustomVars_ButtonActionBar {
+}
+
+.ButtonActionBar {
+	@extend %CustomVars_Button !optional;
+	@include gx-button( 
+		$class: "%BaseButtonActionBar"
+	);
+	@extend %CustomVars_ButtonActionBar !optional;
+}
+
+%BaseConfirmButton {
+	@extend %BaseButton !optional;
+	border-style: none;
+
+}
+
+%CustomVars_ConfirmButton {
+}
+
+.ConfirmButton {
+	@extend %CustomVars_Button !optional;
+	@include gx-button( 
+		$class: "%BaseConfirmButton"
+	);
+	@extend %CustomVars_ConfirmButton !optional;
+}
+
+%BaseButtonDelete {
+	@extend %BaseButton !optional;
+	border-style: none;
+	background-color: #0000FF;
+
+}
+
+%CustomVars_ButtonDelete {
+}
+
+.ButtonDelete {
+	@extend %CustomVars_Button !optional;
+	@include gx-button( 
+		$class: "%BaseButtonDelete"
+	);
+	@extend %CustomVars_ButtonDelete !optional;
+}
+
+
+%BaseMenu {
+}
+
+%CustomVars_Menu {
+}
+
+.Menu {
+	// No mixin available for this class at the moment
+	@extend %BaseMenu !optional;
+
+	@extend %CustomVars_Menu !optional;
+}
+
+%BaseMenuItem {
+}
+
+%CustomVars_MenuItem {
+}
+
+.MenuItem {
+	// No mixin available for this class at the moment
+	@extend %BaseMenuItem !optional;
+
+	@extend %CustomVars_MenuItem !optional;
+}
+
+%BaseGridRow {
+	background-size: 100% 100%;
+
+}
+
+%CustomVars_GridRow {
+}
+
+.GridRow {
+	@include gx-grid-base-row( 
+		$class: "%BaseGridRow"
+	);
+	@extend %CustomVars_GridRow !optional;
+}
+%BaseGridRowOdd {
+	@extend %BaseGridRow !optional;
+
+}
+
+%CustomVars_GridRowOdd {
+}
+
+.GridRowOdd {
+	@extend %CustomVars_GridRow !optional;
+	@include gx-grid-base-row( 
+		$class: "%BaseGridRowOdd"
+	);
+	@extend %CustomVars_GridRowOdd !optional;
+}
+
+%BaseGridRowEven {
+	@extend %BaseGridRow !optional;
+
+}
+
+%CustomVars_GridRowEven {
+}
+
+.GridRowEven {
+	@extend %CustomVars_GridRow !optional;
+	@include gx-grid-base-row( 
+		$class: "%BaseGridRowEven"
+	);
+	@extend %CustomVars_GridRowEven !optional;
+}
+
+
+%BaseGroup {
+	background-size: 100% 100%;
+	sdmotion-max-horizontal: 0;
+	sdmotion-max-vertical: 0;
+
+}
+
+%CustomVars_Group {
+}
+
+.Group {
+	@include gx-group( 
+		$class: "%BaseGroup"
+	);
+	@extend %CustomVars_Group !optional;
+}
+
+%BaseGroupSeparator {
+}
+
+%CustomVars_GroupSeparator {
+}
+
+.GroupSeparator {
+	// No mixin available for this class at the moment
+	@extend %BaseGroupSeparator !optional;
+
+	@extend %CustomVars_GroupSeparator !optional;
+}
+
+%BaseHorizontalLine {
+	background-color: #cfcfcf;
+
+}
+
+%CustomVars_HorizontalLine {
+}
+
+.HorizontalLine {
+	// No mixin available for this class at the moment
+	@extend %BaseHorizontalLine !optional;
+
+	@extend %CustomVars_HorizontalLine !optional;
+}
+%BaseMatrixLineSeparator {
+	@extend %BaseHorizontalLine !optional;
+	background-color: #cfcfcf;
+
+}
+
+%CustomVars_MatrixLineSeparator {
+}
+
+.MatrixLineSeparator {
+	@extend %CustomVars_HorizontalLine !optional;
+	// No mixin available for this class at the moment
+	@extend %BaseMatrixLineSeparator !optional;
+
+	@extend %CustomVars_MatrixLineSeparator !optional;
+}
+
+%BaseWWLineSeparator {
+	@extend %BaseHorizontalLine !optional;
+	background-color: #EAEAEA;
+	margin-bottom: 1px
+}
+
+%CustomVars_WWLineSeparator {
+}
+
+.WWLineSeparator {
+	@extend %CustomVars_HorizontalLine !optional;
+	// No mixin available for this class at the moment
+	@extend %BaseWWLineSeparator !optional;
+
+	@extend %CustomVars_WWLineSeparator !optional;
+}
+
+
+%BaseImage {
+	sdmotion-max-horizontal: 0;
+	sdmotion-max-vertical: 0;
+
+}
+
+%CustomVars_Image {
+	--image-loading-indicator: none;
+}
+
+.Image {
+	@include gx-image-attribute( 
+		$class: "%BaseImage"
+	);
+	@extend %CustomVars_Image !optional;
+}
+%BaseWWImage {
+	@extend %BaseImage !optional;
+
+}
+
+%CustomVars_WWImage {
+}
+
+.WWImage {
+	@extend %CustomVars_Image !optional;
+	@include gx-image-attribute( 
+		$class: "%BaseWWImage"
+	);
+	@extend %CustomVars_WWImage !optional;
+}
+
+%BaseViewImage {
+	@extend %BaseImage !optional;
+
+}
+
+%CustomVars_ViewImage {
+}
+
+.ViewImage {
+	@extend %CustomVars_Image !optional;
+	@include gx-image-attribute( 
+		$class: "%BaseViewImage"
+	);
+	@extend %CustomVars_ViewImage !optional;
+}
+
+
+%BaseMultimedia {
+}
+
+%CustomVars_Multimedia {
+}
+
+.Multimedia {
+	// No mixin available for this class at the moment
+	@extend %BaseMultimedia !optional;
+
+	@extend %CustomVars_Multimedia !optional;
+}
+
+%BaseProgress {
+}
+
+%CustomVars_Progress {
+}
+
+.Progress {
+	@include gx-loading( 
+		$class: "%BaseProgress"
+	);
+	@extend %CustomVars_Progress !optional;
+}
+
+%BaseAudioController {
+}
+
+%CustomVars_AudioController {
+}
+
+.AudioController {
+	// No mixin available for this class at the moment
+	@extend %BaseAudioController !optional;
+
+	@extend %CustomVars_AudioController !optional;
+}
+
+%BaseMatrix {
+	show-horizontal-rules: True;
+	show-vertical-rules: True;
+	background-size: 100% 100%;
+
+}
+
+%CustomVars_Matrix {
+}
+
+.Matrix {
+	// No mixin available for this class at the moment
+	@extend %BaseMatrix !optional;
+
+	@extend %CustomVars_Matrix !optional;
+}
+
+%BaseMatrixAxisLabel {
+}
+
+%CustomVars_MatrixAxisLabel {
+}
+
+.MatrixAxisLabel {
+	// No mixin available for this class at the moment
+	@extend %BaseMatrixAxisLabel !optional;
+
+	@extend %CustomVars_MatrixAxisLabel !optional;
+}
+
+%BaseRating {
+}
+
+%CustomVars_Rating {
+}
+
+.Rating {
+	// No mixin available for this class at the moment
+	@extend %BaseRating !optional;
+
+	@extend %CustomVars_Rating !optional;
+}
+
+%BaseCalendar {
+	background-size: 100% 100%;
+	sdmotion-max-horizontal: 0;
+	sdmotion-max-vertical: 0;
+
+}
+
+%CustomVars_Calendar {
+}
+
+.Calendar {
+	// No mixin available for this class at the moment
+	@extend %BaseCalendar !optional;
+
+	@extend %CustomVars_Calendar !optional;
+}
+
+%BasePageController {
+}
+
+%CustomVars_PageController {
+}
+
+.PageController {
+	// No mixin available for this class at the moment
+	@extend %BasePageController !optional;
+
+	@extend %CustomVars_PageController !optional;
+}
+
+%BaseSlider {
+}
+
+%CustomVars_Slider {
+}
+
+.Slider {
+	// No mixin available for this class at the moment
+	@extend %BaseSlider !optional;
+
+	@extend %CustomVars_Slider !optional;
+}
+
+%BaseMapPinImage {
+}
+
+%CustomVars_MapPinImage {
+}
+
+.MapPinImage {
+	// No mixin available for this class at the moment
+	@extend %BaseMapPinImage !optional;
+
+	@extend %CustomVars_MapPinImage !optional;
+}
+
+%BaseMapRoute {
+}
+
+%CustomVars_MapRoute {
+}
+
+.MapRoute {
+	// No mixin available for this class at the moment
+	@extend %BaseMapRoute !optional;
+
+	@extend %CustomVars_MapRoute !optional;
+}
+
+%BaseMapPolygon {
+}
+
+%CustomVars_MapPolygon {
+}
+
+.MapPolygon {
+	// No mixin available for this class at the moment
+	@extend %BaseMapPolygon !optional;
+
+	@extend %CustomVars_MapPolygon !optional;
+}
+
+%BaseSwitch {
+}
+
+%CustomVars_Switch {
+}
+
+.Switch {
+	// No mixin available for this class at the moment
+	@extend %BaseSwitch !optional;
+
+	@extend %CustomVars_Switch !optional;
+}
+
+%BaseToggleButtonGroup {
+}
+
+%CustomVars_ToggleButtonGroup {
+}
+
+.ToggleButtonGroup {
+	// No mixin available for this class at the moment
+	@extend %BaseToggleButtonGroup !optional;
+
+	@extend %CustomVars_ToggleButtonGroup !optional;
+}
+
+%BaseApplication {
+	background-size: 100% 100%;
+
+
+
+
+
+
+
+
+
+}
+
+%CustomVars_Application {
+	--image-loading-indicator: none;--primary-color: #B80545;--primary-color-dark: #9F0039;--accent-color: #FFA7C0;--control-normal-color: #A1A1A1;--control-activated-color: #FFA7C0;--control-highlight-color: #B80545;--action-tint-color: #FF3F79;
+	--gx-application-background-color: #FFFFFF;
+}
+
+.Application {
+	@include gx-application( 
+		$class: "%BaseApplication"
+	);
+	@extend %CustomVars_Application !optional;
+}
+
+%BaseApplicationBars {
+}
+
+%CustomVars_ApplicationBars {
+	--gx-navbar-main-background-color: #B80545;--gx-navbar-main-color: #FF3F79;--gx-navbar-icon-color: var(--action-tint-color);
+}
+
+.ApplicationBars {
+	@include gx-application-bar( 
+		$class: "%BaseApplicationBars"
+	);
+	@extend %CustomVars_ApplicationBars !optional;
+}
+%BaseApplicationBarsHeaderRow {
+	@extend %BaseApplicationBars !optional;
+
+}
+
+%CustomVars_ApplicationBarsHeaderRow {
+	--gx-navbar-back-button-text: '""';--gx-navbar-icon-color: var(--action-tint-color);
+}
+
+.ApplicationBarsHeaderRow {
+	@extend %CustomVars_ApplicationBars !optional;
+	@include gx-application-bar( 
+		$class: "%BaseApplicationBarsHeaderRow"
+	);
+	@extend %CustomVars_ApplicationBarsHeaderRow !optional;
+}
+
+
+%BaseAttribute {
+	font-size: 18px;
+	color: #2A3143;
+
+}
+
+%CustomVars_Attribute {
+}
+
+.Attribute {
+	@include gx-form-field( 
+		$class: "%BaseAttribute",
+		$highlighted: "%Base_HighlightedAttribute",
+		$label: ".AttributeLabelPositioning"
+	);
+	@extend %CustomVars_Attribute !optional;
+}
+%BaseAttributeSubtitle {
+	@extend %BaseAttribute !optional;
+
+}
+
+%CustomVars_AttributeSubtitle {
+}
+
+.AttributeSubtitle {
+	@extend %CustomVars_Attribute !optional;
+	@include gx-form-field( 
+		$class: "%BaseAttributeSubtitle",
+		$highlighted: "%Base_HighlightedAttribute",
+		$label: ".TextBlockSubtitle"
+	);
+	@extend %CustomVars_AttributeSubtitle !optional;
+}
+
+%BaseAttributeReadOnly {
+	@extend %BaseAttribute !optional;
+
+}
+
+%CustomVars_AttributeReadOnly {
+}
+
+.AttributeReadOnly {
+	@extend %CustomVars_Attribute !optional;
+	@include gx-form-field( 
+		$class: "%BaseAttributeReadOnly",
+		$highlighted: "%Base_HighlightedAttribute",
+		$label: ".TextBlock"
+	);
+	@extend %CustomVars_AttributeReadOnly !optional;
+}
+
+%BaseLinkAttribute {
+	@extend %BaseAttribute !optional;
+
+}
+
+%CustomVars_LinkAttribute {
+}
+
+.LinkAttribute {
+	@extend %CustomVars_Attribute !optional;
+	@include gx-form-field( 
+		$class: "%BaseLinkAttribute",
+		$highlighted: "%Base_HighlightedAttribute",
+		$label: ".TextBlock"
+	);
+	@extend %CustomVars_LinkAttribute !optional;
+}
+
+%BaseAttributeTitle {
+	@extend %BaseAttribute !optional;
+	padding-left: 10px;
+
+}
+
+%CustomVars_AttributeTitle {
+	--margin-top: 0px;--margin-right: 0px;--margin-bottom: 0px;--margin-left: 0px;
+}
+
+.AttributeTitle {
+	@extend %CustomVars_Attribute !optional;
+	@include gx-form-field( 
+		$class: "%BaseAttributeTitle",
+		$highlighted: "%Base_HighlightedAttribute",
+		$label: ".TextBlockTitle"
+	);
+	@extend %CustomVars_AttributeTitle !optional;
+}
+
+%Base_HighlightedAttribute {
+	color: #2A3143;
+
+}
+
+
+
+%BaseGrid {
+	padding-left: 0px;
+	background-size: 100% 100%;
+
+}
+
+%CustomVars_Grid {
+	--grid--horizontal-line-separator: var(--grid--horizontal-line-separator-default);
+}
+
+.Grid {
+	@include gx-grid-base( 
+		$class: "%BaseGrid",
+		$horizontal-line: ".WWLineSeparator",
+		$odd-row: ".GridRowOdd",
+		$even-row: ".GridRowEven"
+	);
+	@extend %CustomVars_Grid !optional;
+}
+
+%BaseTab {
+}
+
+%CustomVars_Tab {
+	--tab-strip-background-color: #B80545;
+}
+
+.Tab {
+	@include gx-tab( 
+		$class: "%BaseTab",
+		$selected-tab-caption: ".TabPageSelected",
+		$unselected-tab-caption: ".TabPageUnselected"
+	);
+	@extend %CustomVars_Tab !optional;
+}
+
+%BaseTabPage {
+	font-size: 18.8px;
+	text-transform: uppercase;
+}
+
+%CustomVars_TabPage {
+}
+
+.TabPage {
+	@include gx-tab-caption( 
+		$class: "%BaseTabPage"
+	);
+	@extend %CustomVars_TabPage !optional;
+}
+%BaseTabPageUnselected {
+	@extend %BaseTabPage !optional;
+
+}
+
+%CustomVars_TabPageUnselected {
+}
+
+.TabPageUnselected {
+	@extend %CustomVars_TabPage !optional;
+	@include gx-tab-caption( 
+		$class: "%BaseTabPageUnselected"
+	);
+	@extend %CustomVars_TabPageUnselected !optional;
+}
+
+%BaseTabPageSelected {
+	@extend %BaseTabPage !optional;
+	color: #FF3F79;
+
+}
+
+%CustomVars_TabPageSelected {
+}
+
+.TabPageSelected {
+	@extend %CustomVars_TabPage !optional;
+	@include gx-tab-caption( 
+		$class: "%BaseTabPageSelected"
+	);
+	@extend %CustomVars_TabPageSelected !optional;
+}
+
+
+%BaseTable {
+	background-color: #FFFFFF;
+	background-size: 100% 100%;
+	sdmotion-max-horizontal: 0;
+	sdmotion-max-vertical: 0;
+
+}
+
+%CustomVars_Table {
+	--table--horizontal-line-separator: none;
+}
+
+.Table {
+	@include gx-table( 
+		$class: "%BaseTable"
+	);
+	@extend %CustomVars_Table !optional;
+}
+%BaseMatrixCell {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_MatrixCell {
+}
+
+.MatrixCell {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseMatrixCell"
+	);
+	@extend %CustomVars_MatrixCell !optional;
+}
+
+%BaseMatrixSelectedCell {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_MatrixSelectedCell {
+}
+
+.MatrixSelectedCell {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseMatrixSelectedCell"
+	);
+	@extend %CustomVars_MatrixSelectedCell !optional;
+}
+
+%BaseMatrixAxisTable {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_MatrixAxisTable {
+}
+
+.MatrixAxisTable {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseMatrixAxisTable"
+	);
+	@extend %CustomVars_MatrixAxisTable !optional;
+}
+
+%BaseMatrixEvenRowTable {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_MatrixEvenRowTable {
+}
+
+.MatrixEvenRowTable {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseMatrixEvenRowTable"
+	);
+	@extend %CustomVars_MatrixEvenRowTable !optional;
+}
+
+%BaseMatrixOddRowTable {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_MatrixOddRowTable {
+}
+
+.MatrixOddRowTable {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseMatrixOddRowTable"
+	);
+	@extend %CustomVars_MatrixOddRowTable !optional;
+}
+
+%BaseMatrixSelectedRowTable {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_MatrixSelectedRowTable {
+}
+
+.MatrixSelectedRowTable {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseMatrixSelectedRowTable"
+	);
+	@extend %CustomVars_MatrixSelectedRowTable !optional;
+}
+
+%BaseTableDetail {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_TableDetail {
+}
+
+.TableDetail {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseTableDetail"
+	);
+	@extend %CustomVars_TableDetail !optional;
+}
+
+%BaseMainTable {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_MainTable {
+}
+
+.MainTable {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseMainTable"
+	);
+	@extend %CustomVars_MainTable !optional;
+}
+
+%BaseGridContainer {
+	@extend %BaseTable !optional;
+
+}
+
+%CustomVars_GridContainer {
+}
+
+.GridContainer {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseGridContainer"
+	);
+	@extend %CustomVars_GridContainer !optional;
+}
+
+%BaseTableSection {
+	@extend %BaseTable !optional;
+	padding-left: 83px;
+	padding-top: 15px;
+
+}
+
+%CustomVars_TableSection {
+	--table--horizontal-line-separator: var(--grid--horizontal-line-separator-default);
+}
+
+.TableSection {
+	@extend %CustomVars_Table !optional;
+	@include gx-table( 
+		$class: "%BaseTableSection",
+		$horizontal-line: ".WWLineSeparator"
+	);
+	@extend %CustomVars_TableSection !optional;
+}
+%BaseTableSectioninsert {
+	@extend %BaseTableSection !optional;
+
+}
+
+%CustomVars_TableSectioninsert {
+}
+
+.TableSectioninsert {
+	@extend %CustomVars_TableSection !optional;
+	@include gx-table( 
+		$class: "%BaseTableSectioninsert",
+		$horizontal-line: ".WWLineSeparator"
+	);
+	@extend %CustomVars_TableSectioninsert !optional;
+}
+
+
+
+%BaseTextBlock {
+	margin-left: 2px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #A1A1A1;
+
+}
+
+%CustomVars_TextBlock {
+}
+
+.TextBlock {
+	@include gx-textblock( 
+		$class: "%BaseTextBlock"
+	);
+	@extend %CustomVars_TextBlock !optional;
+}
+%BaseTextBlockSubtitle {
+	@extend %BaseTextBlock !optional;
+
+}
+
+%CustomVars_TextBlockSubtitle {
+}
+
+.TextBlockSubtitle {
+	@extend %CustomVars_TextBlock !optional;
+	@include gx-textblock( 
+		$class: "%BaseTextBlockSubtitle"
+	);
+	@extend %CustomVars_TextBlockSubtitle !optional;
+}
+
+%BaseImageLabelClass {
+	@extend %BaseTextBlock !optional;
+
+}
+
+%CustomVars_ImageLabelClass {
+}
+
+.ImageLabelClass {
+	@extend %CustomVars_TextBlock !optional;
+	@include gx-textblock( 
+		$class: "%BaseImageLabelClass"
+	);
+	@extend %CustomVars_ImageLabelClass !optional;
+}
+%BaseViewImageLabelClass {
+	@extend %BaseImageLabelClass !optional;
+
+}
+
+%CustomVars_ViewImageLabelClass {
+}
+
+.ViewImageLabelClass {
+	@extend %CustomVars_ImageLabelClass !optional;
+	@include gx-textblock( 
+		$class: "%BaseViewImageLabelClass"
+	);
+	@extend %CustomVars_ViewImageLabelClass !optional;
+}
+
+
+%BaseAttributeLabel {
+	@extend %BaseTextBlock !optional;
+	margin-left: 0px;
+
+}
+
+%CustomVars_AttributeLabel {
+}
+
+.AttributeLabel {
+	@extend %CustomVars_TextBlock !optional;
+	@include gx-textblock( 
+		$class: "%BaseAttributeLabel"
+	);
+	@extend %CustomVars_AttributeLabel !optional;
+}
+
+%BaseTextBlockSlider {
+	@extend %BaseTextBlock !optional;
+	background-color: #B80545;
+
+}
+
+%CustomVars_TextBlockSlider {
+}
+
+.TextBlockSlider {
+	@extend %CustomVars_TextBlock !optional;
+	@include gx-textblock( 
+		$class: "%BaseTextBlockSlider"
+	);
+	@extend %CustomVars_TextBlockSlider !optional;
+}
+
+%BaseTextBlockTitle {
+	@extend %BaseTextBlock !optional;
+	font-size: 18px;
+	color: #2A3143;
+
+}
+
+%CustomVars_TextBlockTitle {
+}
+
+.TextBlockTitle {
+	@extend %CustomVars_TextBlock !optional;
+	@include gx-textblock( 
+		$class: "%BaseTextBlockTitle"
+	);
+	@extend %CustomVars_TextBlockTitle !optional;
+}
+
+%BaseCalendarLabel {
+	@extend %BaseTextBlock !optional;
+	font-size: 34px;
+
+}
+
+%CustomVars_CalendarLabel {
+}
+
+.CalendarLabel {
+	@extend %CustomVars_TextBlock !optional;
+	@include gx-textblock( 
+		$class: "%BaseCalendarLabel"
+	);
+	@extend %CustomVars_CalendarLabel !optional;
+}
+
+%BaseAttributeLabelPositioning {
+	@extend %BaseTextBlock !optional;
+	align:left; 
+}
+
+%CustomVars_AttributeLabelPositioning {
+}
+
+.AttributeLabelPositioning {
+	@extend %CustomVars_TextBlock !optional;
+	@include gx-textblock( 
+		$class: "%BaseAttributeLabelPositioning"
+	);
+	@extend %CustomVars_AttributeLabelPositioning !optional;
+}
+
+
+
+.section > main > gx-card > div > div > gx-table {
+	height: auto;
+}
+
+.section > main > gx-card > div > .card-header {
+	border-spacing: 10px;
+	background-color: rgba(0,0,0,.02);
+}
+
+.section {
+	margin-bottom: 30px;
+}
+
+/* Horizontal grid items must fill its given area */
+.gx-horizontal-grid-item {
+	width:100%;
+	height:100%;
+	& > div {
+		width:100%;
+		height:100%;
+	}
+}
+
+/* Fix horizontal grid elements sizing (AGS version) 
+If this rule is not specified, grid elements in horizontal 
+grids won't grow, and would depend on container size. This 
+won't work if container size depends on contained items size*/
+.gx-horizontal-grid-item .image-viewer {
+	min-width: 100%;
+	min-height: 100%;
+}
+ 

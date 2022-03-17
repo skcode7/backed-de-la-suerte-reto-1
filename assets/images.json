@@ -1,0 +1,34 @@
+{
+  "images": [
+    { 
+          "name": "group", 
+          "theme": "CarmineIOS", 
+          "lang": "English",
+          "colorScheme": "",
+          "options": [
+          ],
+          "density": [], 
+          "location": "resources/CarmineIOS/Group.png"
+    },
+    { 
+          "name": "group", 
+          "theme": "CarmineAndroid", 
+          "lang": "English",
+          "colorScheme": "",
+          "options": [
+          ],
+          "density": [], 
+          "location": "resources/CarmineAndroid/Group.png"
+    },
+    { 
+          "name": "group", 
+          "theme": "CarmineSD", 
+          "lang": "English",
+          "colorScheme": "",
+          "options": [
+          ],
+          "density": [], 
+          "location": "resources/CarmineSD/Group.png"
+    }
+  ]
+}
